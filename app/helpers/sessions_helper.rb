@@ -11,10 +11,10 @@ module SessionsHelper
   end
 
   def current_user
-    if session[:user_id]
-      @current_user ||= User.find_by(id: session[:user_id])
-    elsif cookies.signed[:user_id]
-      user = User.find_by(cookies.signed[:user_id])
+    if (user_id = session[:user_id])
+      @current_user ||= User.find_by(id: user_id)
+    elsif (user_id = cookies.signed[:user_id])
+      user = User.find_by(user_id)
       if user && user.authenticated?(cookies[:remember_token])
         # log_in user will typically only run once.  If after they've been verifie4d
         # the user id is stored in session so reunning current user will get caught
