@@ -7,7 +7,7 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
     assert_no_difference 'User.count' do
       post users_path, user: { name: "",
                                email: "test@invalid",
-                               password: "foox",
+                               password: "foo",
                                password_confirmation: "foox"}
     end
     assert_template 'users/new'
@@ -18,8 +18,8 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
     assert_difference 'User.count', 1 do
       post_via_redirect users_path, user: { name: "Slumdog MM",
                                email: "latika1@shaadi.com",
-                               password: "Amitabh11",
-                               password_confirmation: "Amitabh11"}
+                               password: "password",
+                               password_confirmation: "password"}
     end
     assert_template 'users/show'
     assert is_logged_in?

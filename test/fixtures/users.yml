@@ -1,4 +1,4 @@
 slumdog:
   name: Slumdog Millionaire
   email: latika@shaadi.com
-  password_digest: <%= User.digest('Amitabh11') %>
+  password_digest: <%= User.digest('password') %>
