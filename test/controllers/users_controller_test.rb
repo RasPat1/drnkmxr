@@ -43,7 +43,7 @@ class UsersControllerTest < ActionController::TestCase
     assert_redirected_to login_url
   end
 
-  test "should not reirect index when logged in" do
+  test "should not redirect index when logged in" do
     log_in_as(@user)
     get :index
     assert_template 'users/index'
