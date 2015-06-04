@@ -10,7 +10,7 @@ class UsersController < ApplicationController
     unless logged_in?
       redirect_to login_url
     end
-    @users = User.all
+    @users = User.paginate(page: params[:page])
   end
 
   def show
