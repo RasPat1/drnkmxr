@@ -11,6 +11,8 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
                                password_confirmation: "foox"}
     end
     assert_template 'users/new'
+    assert_select 'div#error_explanation'
+    assert_select 'div#error_explanation li', 4
   end
 
   test "valid user sign up" do
@@ -23,6 +25,8 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
     end
     assert_template 'users/show'
     assert is_logged_in?
+    assert_select 'div.flash-message'
   end
+
 
 end
