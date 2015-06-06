@@ -1,0 +1,10 @@
+{
+	"folders":
+	[
+		{
+			"path": "/Users/Rasesh/Sites/drnkmxr",
+			"folder_exclude_patterns": ["tmp", "log"],
+ 			"file_exclude_patterns": [".tmtags"]
+		}
+	]
+}

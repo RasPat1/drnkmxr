@@ -16,4 +16,10 @@
 !/log/.keep
 /tmp
 /spring/*.pid
+
+# Ignore code climate  helper files
 coverage/.*
+
+# Ignore sublime specific settings files
+*.sublime-workspace
+# *.sublime-project # Actually I like tracking the project file
