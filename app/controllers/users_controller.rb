@@ -8,9 +8,6 @@ class UsersController < ApplicationController
   end
 
   def index
-    unless logged_in?
-      redirect_to login_url
-    end
     @users = User.where(activated: true).paginate(page: params[:page])
   end
 
