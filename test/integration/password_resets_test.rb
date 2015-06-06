@@ -70,7 +70,7 @@ test "password resets" do
                   password_confirmation: "foobar" }
     assert_response :redirect
     follow_redirect!
-    assert_match /forgot your password/i, response.body
+    assert_match /expired/i, response.body
   end
 
 
