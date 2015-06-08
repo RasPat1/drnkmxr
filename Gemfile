@@ -3,7 +3,6 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
-gem 'bootstrap-sass', '3.3.4.1'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
@@ -28,7 +27,6 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'faker',  '~> 1.4.2'
 gem 'will_paginate',           '3.0.7'
-gem 'bootstrap-will_paginate', '0.0.10'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
 # Use Unicorn as the app server

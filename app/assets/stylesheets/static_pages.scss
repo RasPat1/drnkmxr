@@ -1,12 +1,15 @@
 /******************************************************************************
  Home page styles
  ******************************************************************************/
-container {
-  background-color: pink;
-  width: 1005;
+/* line 5, /Users/Rasesh/Sites/drnkmxr/app/assets/stylesheets/static_pages.scss */
+.container {
+  background-color: rgb(153, 194, 162);
+  // width: 100px;
 }
+
+/* line 9, /Users/Rasesh/Sites/drnkmxr/app/assets/stylesheets/static_pages.scss */
 .marketing {
   height: 1000px;
   width: 100%;
-  background-color: pink;
+  background-color: rgb(104,179,145);
 }
