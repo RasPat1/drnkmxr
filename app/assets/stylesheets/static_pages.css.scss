@@ -44,7 +44,7 @@
   width: 80px;
   height: 31px;
   line-height: 28px;
-  font-size: 12px;
+  font-size: 14px;
 }
 /******************************************************************************
  Panel 1
@@ -60,9 +60,12 @@
 .intro__title {
   font-size: 48px;
   font-weight: normal;
+  margin: 0px;
 }
 .intro__copy {
   font-size: 48px;
+  margin-top: 0px;
+  margin-bottom: 12px;
 }
 .intro__rolling-content {
   color: $red;
@@ -76,7 +79,7 @@
 .intro__continue-copy {
   color: white;
   font-family: $font-primary;
-  font-size: 24px;
+  font-size: 16px;
 }
 .intro__continue-arrow {
   @extend .continue-arrow;
