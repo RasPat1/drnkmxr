@@ -4,19 +4,20 @@
  Header
  ******************************************************************************/
 
-.header {
+.nav {
   position: fixed;
   left: 0px;
   right: 0px;
   z-index: 1;
-}
-
-.nav {
   background-color: $green;
   height: 80px;
   margin: 0px;
   display: table;
-  width: 100%
+  width: 100%;
+  transition: all 0.2s;
+  &.nav--bordered {
+    border-bottom: 1px solid $white;
+  }
 }
 
 .nav__list {
