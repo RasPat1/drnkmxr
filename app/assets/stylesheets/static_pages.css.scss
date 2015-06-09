@@ -2,28 +2,29 @@
 /******************************************************************************
  Home page styles
  ******************************************************************************/
-/* line 5, /Users/Rasesh/Sites/drnkmxr/app/assets/stylesheets/static_pages.scss */
-.container {
-  // background-color: rgb(153, 194, 162);
-  // width: 100px;
-}
-
-/* line 9, /Users/Rasesh/Sites/drnkmxr/app/assets/stylesheets/static_pages.scss */
-.marketing__intro {
+.panel {
   height: 600px;
   width: 100%;
-  background-color: $green;
   position: relative;
   display: table;
 }
-.intro__content {
-  color: white;
-  font-family: $font-primary;
-  line-height: 27px;
-  //text-align: left;
+.panel-content {
   padding: 0px 100px;
   display: table-cell;
   vertical-align: middle;
+  color: white;
+  font-family: $font-primary;
+}
+/******************************************************************************
+ Panel 1
+ ******************************************************************************/
+
+.marketing__intro {
+  @extend .panel;
+  background-color: $green;
+}
+.intro__content {
+  @extend .panel-content;
 }
 .intro__title {
   font-size: 48px;
@@ -68,4 +69,17 @@
   color: white;
   font-family: $font-primary;
   font-style: normal;
+}
+
+/******************************************************************************
+ Panel 2
+ ******************************************************************************/
+
+.marketing__elevator {
+  @extend .panel;
+  background-color: $gray;
+  //@include at2x("fold-1", jpg, 384px, 384px); // why image no work?
+}
+.elevator__copy {
+  @extend .panel-content;
 }
