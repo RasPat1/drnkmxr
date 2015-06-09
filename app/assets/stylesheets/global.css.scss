@@ -41,7 +41,7 @@ $white: #FFFFFF;
  TypeFace
  ******************************************************************************/
 
-$font-primary: "Avenir", "Nunito", Helvetica, Arial, sans-serif;
+$font-primary: "Avenir Next", "Avenir", "Nunito", Helvetica, Arial, sans-serif;
 
 @mixin font-primary {
   font-family: $font-primary;
