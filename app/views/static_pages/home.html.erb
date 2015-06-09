@@ -18,31 +18,44 @@
     </div>
   </section>
   <section class="marketing__elevator">
-    <i class="marketing__vegetable-image"></i>
-    <p class="elevator__copy"></p>
+    <div class="elevator__content">
+    <i class="elevator__vegetable-image"></i>
+    <p class="elevator__copy">We believe in creating delicious, organic cocktail mixers
+using locally sourced fruits and vegetables whenever possible. We believe in crafting custom menus for your events, big or small. Most of all, we believe in experiences and want to be a part of yours.</p>
+</div>
+<div class="elevator__continue">
+<i class="elevator__continue-arrow" id="elevator__continue-arrow">V</i>
+</div>
   </section>
-  <section class="marketing__image"></section>
+  <section class="marketing__why">
+    <div class="why__content">
+        <i class="why__vegetable-image"></i>
+    <p class="why__copy">We take away all of the headaches of throwing a party. Plus, all of our cocktails are organic. We’ll tell you how much alchol to buy, and we’ll take care of the rest. </p>
+    </div>
+    <div class="why__continue">
+    <i class="why__continue-arrow" id="why__continue-arrow">V</i>
+  </div>
+  </section>
   <section class="marketing__cta">
-    <div class="marketing__zip-form nl-sign-up">
-
+    <div class="cta__content">
+      <div class="cta__zip-form nl-sign-up">My ZIP is _______
+      </div>
+      <div class="cta__book-btn-holder">
+        <div class="cta__book-btn">Book</div>
+      </div>
     </div>
   </section>
 </article>
-
-
-
-<div class="center jumbotron greeting-container">
-  <h1>Welcome to the Cucumber Zone</h1>
-
-  <h2>
-    This is the home page for the
-    <a href="http://www.drnkmxr.com/">Drnk Mxr</a>
-    Boilerplate Application
-  </h2>
+<footer class="footer">
+  <ul class="footer__list">
+    <li>Privacy Policy</li>
+    <li>Terms Of Service</li>
+    <li>(c) 2015 DRNK|MXR Inc, All Rights Reserved - Made in NYC. Please Drink Responsibly.</li>
+  </ul>
+</footer>
 
   <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
 
   <%= link_to "Pay Money!", new_charge_path, class: "btn btn-lg btn-primary" %>
-</div>
 
 <%= image_tag "fold-image.jpg", alt: "Our Drinks", class: "home-above-fold" %>
