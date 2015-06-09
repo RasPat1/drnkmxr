@@ -41,10 +41,17 @@ $white: #FFFFFF;
  TypeFace
  ******************************************************************************/
 
-$font-primary: Helvetica, Arial, sans-serif;
+$font-primary: "Avenir", "Nunito", Helvetica, Arial, sans-serif;
 
 @mixin font-primary {
   font-family: $font-primary;
+  font-weight: normal;
+  color: white;
+}
+
+@mixin font-light {
+  font-family: $font-primary;
+  font-weight: light;
   color: white;
 }
 
