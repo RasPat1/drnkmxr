@@ -1,3 +1,4 @@
+@import "global";
 /******************************************************************************
  Home page styles
  ******************************************************************************/
@@ -8,8 +9,59 @@
 }
 
 /* line 9, /Users/Rasesh/Sites/drnkmxr/app/assets/stylesheets/static_pages.scss */
-.marketing {
-  height: 1000px;
+.marketing__intro {
+  height: 600px;
   width: 100%;
-  background-color: rgb(104,179,145);
+  background-color: $green;
+  position: relative;
+  display: table;
+}
+.intro__content {
+  color: white;
+  font-family: $font-primary;
+  font-size: 20px;
+  line-height: 27px;
+  //text-align: left;
+  padding: 0px 100px;
+  display: table-cell;
+  vertical-align: middle;
+}
+.intro__title {
+
+}
+.intro__copy {
+
+}
+.intro__rolling-content {
+  color: $red;
+}
+.intro__book-btn {
+  text-align: center;
+  text-transform: capitalize;
+  background-color: transparent;
+  border: 2px solid $white;
+  border-radius: 2px;
+  width: 90px;
+  font-size: 12px;
+}
+.intro__continue {
+  position: absolute;
+  bottom: 0px;
+  text-align: center;
+  width: 100%;
+  height: 100px;
+}
+.intro__continue-copy {
+  color: white;
+  font-family: $font-primary;
+  font-size: 12px;
+}
+.intro__continue-arrow {
+  display: inline-block;
+  background-image: "img";
+  height: 20px;
+  width: 20px;
+  // Remove when an actival image is there
+  color: white;
+  font-family: $font-primary;
 }
