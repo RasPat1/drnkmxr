@@ -14,3 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+// get height of second panel
+// switch the colors and add the border once height is on the second panel
+// Is there a way to check if two elements are ontop of each other?
