@@ -18,15 +18,20 @@
 
 $green: #99C2A2;
 $orange: #FFB18C;
-$red: #A1586E;
+$red: #A0596E;
 $gray: #AEAEAE;
 $white: #FFFFFF;
 
 /******************************************************************************
  TypeFace
  ******************************************************************************/
+
 $font-primary: Helvetica, Arial, sans-serif;
 
+@mixin font-primary {
+  font-family: $font-primary;
+  color: white;
+}
 
 /******************************************************************************
  Universal
