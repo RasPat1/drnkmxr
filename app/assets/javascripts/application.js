@@ -18,3 +18,6 @@
 // get height of second panel
 // switch the colors and add the border once height is on the second panel
 // Is there a way to check if two elements are ontop of each other?
+
+// Js for spinning text
+// Use a css transition transform z?  rotate z?
