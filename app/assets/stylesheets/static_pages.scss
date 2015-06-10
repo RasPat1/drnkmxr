@@ -94,6 +94,7 @@
 .marketing__elevator {
   @extend .panel;
   background-color: $gray;
+  background-image: image-url("fruitandveg.jpg");
   //@include at2x("fold-1", jpg, 384px, 384px); // why image no work?
 }
 .elevator__content {
@@ -129,10 +130,10 @@
 
 .marketing__cta {
   @extend .panel;
+  background-image: image-url("mint.jpg");
 }
 .cta__content {
   @extend .panel-content;
-  background-color: $gray;
 }
 .cta__book-btn-holder {
   margin-top: 20px;
