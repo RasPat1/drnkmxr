@@ -1,0 +1,8 @@
+# Source this file into your bash_profile to make working on drnkmxr a pleasure
+# If necessary adjust the DRNK_PATH
+# Hardlink it to ~/.drnk_env for neatness
+
+USERNAME=`whoami`
+DRNK_PATH=/Users/$USERNAME/Sites/drnkmxr
+alias drnk="subl --project drnkmxr.sublime-project"
+alias drnkup="cd $DRNK_PATH && drnk && rails s"
