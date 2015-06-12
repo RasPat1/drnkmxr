@@ -130,7 +130,11 @@
 
 .marketing__cta {
   @extend .panel;
+  @extend .panel-image;
+  @extend .fade-image;
+  background-color: $gray;
   background-image: image-url("mint.jpg");
+
 }
 .cta__content {
   @extend .panel-content;
