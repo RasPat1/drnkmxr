@@ -2,16 +2,32 @@
 /******************************************************************************
  Home page styles
  ******************************************************************************/
+
+/******************************************************************************
+ Mixins
+ ******************************************************************************/
+
+@mixin panel-image($img, $color) {
+  background-color: $color;
+  background-image: image-url($img);
+  background-size: cover;
+  //@include at2x("fold-1", jpg, 384px, 384px); // why image no work?
+}
+
+/******************************************************************************
+ Extendables
+ ******************************************************************************/
+
 .panel {
+  display: table;
   height: 600px;
   width: 100%;
   position: relative;
-  display: table;
 }
 .panel-content {
-  padding: 0px 100px;
   display: table-cell;
   vertical-align: middle;
+  padding: 0px 100px;
   color: white;
   font-family: $font-primary;
   text-align: center;
@@ -47,6 +63,7 @@
   line-height: 28px;
   font-size: 14px;
 }
+
 /******************************************************************************
  Panel 1
  ******************************************************************************/
@@ -93,9 +110,7 @@
 
 .marketing__elevator {
   @extend .panel;
-  background-color: $gray;
-  background-image: image-url("fruitandveg.jpg");
-  //@include at2x("fold-1", jpg, 384px, 384px); // why image no work?
+  @include panel-image("fruitandveg.jpg", $gray);
 }
 .elevator__content {
   @extend .panel-content;
@@ -130,11 +145,7 @@
 
 .marketing__cta {
   @extend .panel;
-  @extend .panel-image;
-  @extend .fade-image;
-  background-color: $gray;
-  background-image: image-url("mint.jpg");
-
+  @include panel-image("mint.jpg", $gray)
 }
 .cta__content {
   @extend .panel-content;
