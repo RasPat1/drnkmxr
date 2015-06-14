@@ -110,7 +110,7 @@
 
 .marketing__elevator {
   @extend .panel;
-  @include panel-image("fruitandveg.jpg", $gray);
+  @include panel-image("fruitandveg-faded-40.jpg", $gray);
 }
 .elevator__content {
   @extend .panel-content;
@@ -145,7 +145,7 @@
 
 .marketing__cta {
   @extend .panel;
-  @include panel-image("mint.jpg", $gray)
+  @include panel-image("mint-faded-40.jpg", $gray)
 }
 .cta__content {
   @extend .panel-content;
