@@ -1,8 +1,4 @@
 /******************************************************************************
- Variables, Mixins and Defaults
- ******************************************************************************/
-
-/******************************************************************************
  Mixins
  ******************************************************************************/
 
@@ -64,30 +60,4 @@ $font-primary: "Avenir Next", "Avenir", "Nunito", Helvetica, Arial, sans-serif;
   font-family: $font-primary;
   font-weight: light;
   color: white;
-}
-
-/******************************************************************************
- Universal
- ******************************************************************************/
-
-* {
-  @include box-sizing;
-}
-
-body {
-  position: relative;
-  font-family: $font-primary;
-}
-
-section {
-  overflow: auto;
-}
-
-textarea {
-  resize: vertical;
-}
-
-a {
-  text-decoration: none;
-  color: black;
 }

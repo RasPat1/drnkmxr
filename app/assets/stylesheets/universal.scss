@@ -1,0 +1,27 @@
+@import "global";
+
+/******************************************************************************
+ Universal
+ ******************************************************************************/
+
+* {
+  @include box-sizing;
+}
+
+body {
+  position: relative;
+  font-family: $font-primary;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
