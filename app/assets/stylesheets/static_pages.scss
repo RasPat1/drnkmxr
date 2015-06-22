@@ -142,7 +142,7 @@
 
 .marketing__cta {
   @extend .panel;
-  @include panel-image("mint-faded-40.jpg", $gray)
+  @include panel-image("mint-faded-40.jpg", $gray);
 }
 .cta__content {
   @extend .panel-content;
