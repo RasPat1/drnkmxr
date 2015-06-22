@@ -61,7 +61,13 @@
   line-height: 28px;
   font-size: 14px;
 }
-
+.edible-icon {
+  display: block;
+  width: 40px;
+  height: 40px;
+  margin: 0px auto;
+  background-color: aliceblue;
+}
 /******************************************************************************
  Panel 1
  ******************************************************************************/
@@ -112,6 +118,9 @@
 .elevator__content {
   @extend .panel-content;
 }
+.elevator__vegetable-image {
+  @extend .edible-icon;
+}
 .elevator__continue {
   @extend .continue;
 }
@@ -131,6 +140,9 @@
 }
 .why__continue {
   @extend .continue;
+}
+.why__vegetable-image {
+  @extend .edible-icon;
 }
 .why__continue-arrow {
   @extend .continue-arrow;
