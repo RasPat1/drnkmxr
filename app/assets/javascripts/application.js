@@ -25,11 +25,25 @@
 // Once the nave bar goes past the first panel fade the color to
 // THe next panel color.  For now hard code the changes.  Add transitio to the
 // nav and add classes for which panel it's above
+jQuery.fn.scrollTo = function(time) {
+    $('html,body').animate({
+      scrollTop: $(this).offset().top
+    }, time);
+  };
 
 $(function() {
   var $accentWords = $('.intro__accent-word');
-
   var accentWordIndex = 0;
+  var $firstBookBtn = $('.intro__book-btn');
+  var $bookPanel = $('.marketing__cta');
+
+  // Attach an event handler to the "Book" button and scroll to sign up
+  // form on click
+  $firstBookBtn.click(function() {
+    $bookPanel.scrollTo(500);
+  });
+
+  // Cycle the accent words on an interval
   var interval = setInterval(function() {
     var $oldWord = $($accentWords[accentWordIndex]);
     var className = "intro__accent-word--hidden";
