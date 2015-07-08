@@ -197,3 +197,12 @@
   @extend .btn-primary;
   margin: 0px auto;
 }
+.sign-up__zip-input {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  display: inline;
+  width: 100px;
+  border-bottom: solid 1px white;
+  text-align: center;
+}
