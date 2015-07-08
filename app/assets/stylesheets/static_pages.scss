@@ -31,6 +31,9 @@
   padding: 0px 100px;
   color: white;
   text-align: center;
+  @media all and (max-width: 668px) {
+    padding: 0px 20px;
+  }
 }
 .continue {
   position: absolute;
@@ -91,8 +94,20 @@
   margin-top: 0px;
   margin-bottom: 12px;
 }
-.intro__rolling-content {
+.intro__accent-word {
+  font-size: 48px;
   color: $red;
+  font-style: italic;
+  transition:visibility 0s linear 0.5s,opacity 0.5s linear;
+  opacity: 1;
+  visibility: visible;
+}
+.intro__accent-word--transistion {
+  opacity: 0;
+  visibility: hidden;
+}
+.intro__accent-word--hidden {
+  display: none;
 }
 .intro__book-btn {
   @extend .btn-primary;

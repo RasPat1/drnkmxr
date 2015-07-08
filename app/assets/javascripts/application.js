@@ -23,9 +23,18 @@
 // Use a css transition transform z?  rotate z?
 
 // Once the nave bar goes past the first panel fade the color to
-// THe next panel color.  FOr now hard code the changes.  Add transitio to the
+// THe next panel color.  For now hard code the changes.  Add transitio to the
 // nav and add classes for which panel it's above
 
 $(function() {
-
+  var $accentWords = $('.intro__accent-word');
+  var i = 0;
+  var interval = setInterval(function() {
+    var $oldWord = $($accentWords[i]);
+    var className = "intro__accent-word--hidden";
+    i = (i + 1) % $accentWords.length;
+    var $newWord = $($accentWords[i]);
+    $newWord.toggleClass(className);
+    $oldWord.toggleClass(className);
+  }, 1500);
 });
