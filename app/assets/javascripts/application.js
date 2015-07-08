@@ -28,13 +28,15 @@
 
 $(function() {
   var $accentWords = $('.intro__accent-word');
-  var i = 0;
+
+  var accentWordIndex = 0;
   var interval = setInterval(function() {
-    var $oldWord = $($accentWords[i]);
+    var $oldWord = $($accentWords[accentWordIndex]);
     var className = "intro__accent-word--hidden";
-    i = (i + 1) % $accentWords.length;
-    var $newWord = $($accentWords[i]);
+    accentWordIndex = (accentWordIndex + 1) % $accentWords.length;
+    var $newWord = $($accentWords[accentWordIndex]);
     $newWord.toggleClass(className);
     $oldWord.toggleClass(className);
   }, 1500);
+
 });
