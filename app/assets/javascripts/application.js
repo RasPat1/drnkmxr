@@ -49,8 +49,8 @@ $(function() {
     var className = "intro__accent-word--hidden";
     accentWordIndex = (accentWordIndex + 1) % $accentWords.length;
     var $newWord = $($accentWords[accentWordIndex]);
-    $newWord.toggleClass(className);
-    $oldWord.toggleClass(className);
-  }, 1500);
+    $oldWord.fadeToggle(1000).delay(500).css({display: "none"});
+    $newWord.fadeToggle(500).delay(500).css({display: "inline"});
+  }, 3000);
 
 });
