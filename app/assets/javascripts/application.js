@@ -36,11 +36,13 @@ $(function() {
   var accentWordIndex = 0;
   var $firstBookBtn = $('.intro__book-btn');
   var $bookPanel = $('.marketing__cta');
+  var $signUpInput = $('.sign-up__zip-input');
 
   // Attach an event handler to the "Book" button and scroll to sign up
   // form on click
   $firstBookBtn.click(function() {
     $bookPanel.scrollTo(500);
+    $signUpInput.focus();
   });
 
   // Cycle the accent words on an interval
