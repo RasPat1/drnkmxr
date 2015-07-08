@@ -71,6 +71,15 @@
   height: 40px;
   margin: 0px auto;
 }
+/******************************************************************************
+ Page Containers
+ ******************************************************************************/
+
+.marketing {
+  // Otherwise the nav is sitting on top of the first panel
+  // And that makes it effectively a look smaller than desired
+  padding-top: 70px;
+}
 
 /******************************************************************************
  Panel 1
