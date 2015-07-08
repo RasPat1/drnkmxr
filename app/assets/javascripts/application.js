@@ -51,6 +51,6 @@ $(function() {
     var $newWord = $($accentWords[accentWordIndex]);
     $oldWord.fadeToggle(1000).delay(500).css({display: "none"});
     $newWord.fadeToggle(500).delay(500).css({display: "inline"});
-  }, 3000);
+  }, 2000);
 
 });
