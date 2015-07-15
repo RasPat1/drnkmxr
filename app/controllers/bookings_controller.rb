@@ -1,4 +1,4 @@
-class BookingController < ApplicationController
+class BookingsController < ApplicationController
   def create
     # save user info
     # send us an email with that info
