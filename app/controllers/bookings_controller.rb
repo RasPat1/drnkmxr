@@ -3,7 +3,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(:zip => params[:booking][:zip])
 
     if @booking.save
-      # @booking.send_booking_email
+      @booking.send_booking_submitted
       # render "success"
     else
       # render "fail"
