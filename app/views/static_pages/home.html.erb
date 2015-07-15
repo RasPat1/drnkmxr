@@ -37,11 +37,13 @@ using locally sourced fruits and vegetables whenever possible. We believe in cra
   </section>
   <section class="marketing__cta">
     <div class="cta__content">
-      <form action="" class="cta__zip-form nl-sign-up">My <label for="zip-code">Zip</label> is <input class="sign-up__zip-input" name="zip-code" type="text" /></form>
-      </form>
-      <div class="cta__book-btn-holder">
-        <div class="cta__book-btn">Book</div>
-      </div>
+      <%= form_for @bookings, remote: true do |f| %>
+        My <%= f.label :zip %> is
+        <%= f.text_field :zip, class: "sign-up__zip-input" %>
+        <div class="cta__book-btn-holder">
+        <%= f.submit "Book", class: "cta__book-btn" %>
+        </div>
+      <% end %>
     </div>
   </section>
 </article>
