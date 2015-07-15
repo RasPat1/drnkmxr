@@ -1,5 +1,6 @@
 class StaticPagesController < ApplicationController
   def home
+    @bookings = Booking.new
   end
 
   def help
