@@ -1,5 +1,11 @@
 class UserMailer < ApplicationMailer
+  # For Bookings
+  def booking_submitted(booking)
+    @booking = booking
+    mail to: "ras@drnkmxr.com", subject: "Booking submitted"
+  end
 
+  #For Users
   def account_activation(user)
     @user = user
     mail to: user.email, subject: "Account activation"
@@ -9,4 +15,6 @@ class UserMailer < ApplicationMailer
     @user = user
     mail to: user.email, subject: "Password Reset"
   end
+
+
 end
