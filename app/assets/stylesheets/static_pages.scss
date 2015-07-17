@@ -1,3 +1,4 @@
+
 @import "global";
 
 /******************************************************************************
@@ -73,6 +74,16 @@
   margin: 0px auto;
   color: rgba(255, 255, 255, 0.8);
 }
+.panel__form-field {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  display: inline;
+  width: 100px;
+  border-bottom: solid 1px white;
+  text-align: center;
+}
+
 /******************************************************************************
  Page Containers
  ******************************************************************************/
@@ -199,11 +210,8 @@
   margin: 0px auto;
 }
 .sign-up__zip-input {
-  background-color: transparent;
-  outline: none;
-  border: none;
-  display: inline;
-  width: 100px;
-  border-bottom: solid 1px white;
-  text-align: center;
+  @extend .panel__form-field;
+}
+.sign-up__email-input {
+  @extend .panel__form-field;
 }
