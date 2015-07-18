@@ -1,16 +1,16 @@
 class BookingsController < ApplicationController
   def create
-    @booking = Booking.new(:zip => params[:booking][:zip])
-
-    if @booking.save
+    @booking = Booking.new(
+      :zip => params[:booking][:zip],
+      :email => params[:booking][:email])
+    result = {success: false}
+    if @booking.save # save user info
+      # send us an email with that info
       @booking.send_booking_submitted
-      # render "success"
-    else
-      # render "fail"
+      result[:success] = true
     end
-    # save user info
-    # send us an email with that info
+
     # return a partial with the thank you message
-    render nothing: true
+    format.json { render json: result }
   end
 end
