@@ -29,7 +29,7 @@
 .panel-content {
   display: table-cell;
   vertical-align: middle;
-  padding: 0px 100px;
+  padding: 0px 20%;
   color: white;
   text-align: center;
   @media all and (max-width: 668px) {
@@ -214,4 +214,5 @@
 }
 .sign-up__email-input {
   @extend .panel__form-field;
+  width: 280px;
 }
