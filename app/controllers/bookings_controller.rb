@@ -11,6 +11,6 @@ class BookingsController < ApplicationController
     end
 
     # return a partial with the thank you message
-    format.json { render json: result }
+    render json: result
   end
 end
