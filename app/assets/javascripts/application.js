@@ -55,4 +55,25 @@ $(function() {
     $newWord.fadeToggle(500).delay(500).css({display: "inline"});
   }, 2000);
 
+  var $bookForm = $('#new_booking');
+  var $failDiv = $('.cta__form-fail');
+
+  // $bookForm.on('ajax', function(e, data, status, xhr) {
+  //   $failDiv.addClass('hidden');
+  // });
+
+  $bookForm.on('ajax:success',function(e, data, status, xhr){
+    var message = data.message
+    if (data.success) {
+      $bookForm.text(message);
+      $failDiv.addClass('hidden');
+    } else {
+      $failDiv.removeClass('hidden');
+      $failDiv.text(message);
+    }
+  }).on('ajax:error',function(e, xhr, status, error){
+    $failDiv.removeClass('hidden');
+    $failDiv.text('Failed.');
+  });
+
 });

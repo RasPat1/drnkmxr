@@ -216,3 +216,10 @@
   @extend .panel__form-field;
   width: 280px;
 }
+.cta__form-fail {
+  margin-top: 20px;
+  // transition: margin-top 2s;
+}
+.cta__form-fail.hidden {
+  margin-top: 0px;
+}
