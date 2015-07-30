@@ -23,3 +23,6 @@ coverage/.*
 # Ignore sublime specific settings files
 *.sublime-workspace
 # *.sublime-project # Actually I like tracking the project file
+
+# Ignore psd since they're so big
+*.psd
