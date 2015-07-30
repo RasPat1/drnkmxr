@@ -2,7 +2,7 @@ class UserMailer < ApplicationMailer
   # For Bookings
   def booking_submitted(booking)
     @booking = booking
-    mail to: "ras@drnkmxr.com", subject: "Booking submitted"
+    mail to: "julia@drnkmxr.com", cc: "ras@drnkmxr.com, basil@drnkmxr.com", subject: "Booking submitted"
   end
 
   #For Users
