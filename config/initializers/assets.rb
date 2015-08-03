@@ -12,4 +12,4 @@ Rails.application.config.assets.paths << "#{Rails.root}/app/assets/fonts"
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
 # Rails.application.config.assets.precompile += %w( search.js )
 
-// Sass.load_paths << Compass::Frameworks['compass'].stylesheets_directory
+# Sass.load_paths << Compass::Frameworks['compass'].stylesheets_directory
