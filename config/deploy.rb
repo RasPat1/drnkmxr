@@ -1,5 +1,5 @@
 # Change these
-server 'server', port: 22, roles: [:web, :app, :db], primary: true
+server 'stardust', port: 22, roles: [:web, :app, :db], primary: true
 
 set :repo_url,        'git@github.com:RasPat1/drnkmxr.git'
 set :application,     'drnkmxr'
