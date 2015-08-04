@@ -11,6 +11,8 @@
  * file per style scope.
  *
  *= require_tree ../../../vendor/assets/components/normalize.css
+ *= require_tree ../
+ *= require_tree ../../../app/assets/fonts/
  *= require_self
  */
 
