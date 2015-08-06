@@ -29,6 +29,8 @@ gem 'faker',  '~> 1.4.2'
 gem 'will_paginate',           '3.0.7'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
+gem 'dynamic_sitemaps'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
