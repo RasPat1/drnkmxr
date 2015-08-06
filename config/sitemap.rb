@@ -1,6 +1,6 @@
 # Change this to your host. See the readme at https://github.com/lassebunk/dynamic_sitemaps
 # for examples of multiple hosts and folders.
-host "www.example.com"
+host "www.drnkmxr.com"
 
 sitemap :site do
   url root_url, last_mod: Time.now, change_freq: "daily", priority: 1.0
@@ -23,18 +23,18 @@ end
 
 # If you want to generate multiple sitemaps in different folders (for example if you have
 # more than one domain, you can specify a folder before the sitemap definitions:
-# 
+#
 #   Site.all.each do |site|
 #     folder "sitemaps/#{site.domain}"
 #     host site.domain
-#     
+#
 #     sitemap :site do
 #       url root_url
 #     end
-# 
+#
 #     sitemap_for site.products.scoped
 #   end
 
 # Ping search engines after sitemap generation:
 #
-#   ping_with "http://#{host}/sitemap.xml"
+ping_with "http://#{host}/sitemap.xml"
