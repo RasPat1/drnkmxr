@@ -48,6 +48,11 @@ group :development, :test do
 
   # Calculate code coverage on code climate
   gem "codeclimate-test-reporter", group: :test, require: nil
+  gem 'capistrano',         require: false
+  gem 'capistrano-rvm',     require: false
+  gem 'capistrano-rails',   require: false
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano3-puma',   require: false
 end
 
 group :test do
@@ -58,6 +63,7 @@ end
 
 group :production do
   gem 'pg',             '0.17.1'
+  # gem 'sqlite3'
   gem 'rails_12factor', '0.0.2'
   gem 'puma',           '2.11.1'
 end

@@ -11,7 +11,8 @@
  * file per style scope.
  *
  *= require_tree ../../../vendor/assets/components/normalize.css
- *= require_tree .
+ *= require_tree ../
+ *= require_tree ../../../app/assets/fonts/
  *= require_self
  */
 
@@ -19,4 +20,46 @@
  Icons
  ******************************************************************************/
 
-@import "flaticon";
+@font-face {
+  font-family: "Flaticon";
+  src: url("flaticon.eot");
+  src: url("flaticon.eot#iefix") format("embedded-opentype"),
+  url("flaticon.woff") format("woff"),
+  url("flaticon.ttf") format("truetype"),
+  url("flaticon.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {
+  font-family: Flaticon;
+  font-size: 40px;
+  font-style: normal;
+}
+.flaticon-facebook51:before {
+  content: "\e000";
+}
+.flaticon-fruit42:before  {
+  content: "\e001";
+}
+.flaticon-instagram1:before {
+  content: "\e002";
+}
+.flaticon-orange2:before {
+  content: "\e003";
+}
+.flaticon-pinterest31:before {
+  content: "\e004";
+}
+.flaticon-social123:before {
+  content: "\e005";
+}
+.flaticon-twitter44:before {
+  content: "\e006";
+}
+.flaticon-user7:before {
+  content: "\e007";
+}
+.flaticon-whatsapp:before {
+  content: "\e008";
+}
