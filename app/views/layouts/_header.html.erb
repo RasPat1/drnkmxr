@@ -1,5 +1,5 @@
 <header class="header">
-    <nav class="nav">
+    <nav class="nav <%= yield :nav_mod_class %>">
       <ul class="nav__list">
         <li class="nav__logo-link-holder"><%= link_to "drnkmxr", root_path, class: "nav__logo-link" %></li>
         <!-- <li class="nav__help-link-holder"><%= link_to "Help", help_path, class: "nav__help-link" %></li>
