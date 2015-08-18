@@ -1,3 +1,52 @@
-// Place all the styles related to the checkouts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "extendables";
+
+/******************************************************************************
+ Checkout Page Styles
+ ******************************************************************************/
+
+.checkout {
+  //padding-top: 70px;
+  @extend .panel;
+}
+.checkout__content {
+  @extend .panel-content;
+  @include panel-image("fruitandveg-faded-40.jpg", $gray);
+  padding-top: 70px;
+}
+.checkout__heading {
+  font-size: 30px;
+  font-weight: normal;
+  color: $white;
+}
+.checkout__book-btn {
+  @extend .btn-primary;
+  color: $white;
+  margin: 30px auto;
+}
+.drnk {
+  line-height: 0;
+  font-size: 0;
+  width: 30%;
+  display: inline-block;
+  vertical-align: top;
+  background-color: rgba($white, 0.6);
+  padding: 0px;
+  margin: 0px 10px;
+  border-radius: 4px;
+}
+.drnk__heading {
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  margin: 9px 0px 6px;
+  color: $black;
+}
+.drnk__tasting-notes {
+  width: 100%;
+  max-width: 200px;
+  text-align: justify;
+  font-size: 12px;
+  @include font-size(12px, 200px);
+  margin: 0px auto;
+  color: $black;
+}
