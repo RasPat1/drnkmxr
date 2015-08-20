@@ -4,7 +4,7 @@ Tock-1
 ======
 done -- CSS extensions
 done -- Get current tests to be passing
-Write tests for booking (intereseted)
+Write tests for booking (interested)
 Tests for booking/interested
 Update rails
 Code climate quality changes

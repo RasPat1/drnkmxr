@@ -16,12 +16,13 @@ This app is deployed on heroku at drnkmxr.com.  To deploy push to master ```git 
 Testing
 -------
 Testing and quality info is at codeclimate.com
-run guard for testing
+Run guard for testing
+If ENV['CODECLIMATE_REPO_TOKEN'] is set it will automatically upload to code climate
 
 
 Database
 --------
-Postgres 9.4.4 on production 
+Postgres 9.4.4 on production
 Sqlite on Development
 
 
