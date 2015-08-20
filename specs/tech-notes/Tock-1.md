@@ -2,8 +2,8 @@ Clean up Phase (Tock)
 
 Tock-1
 ======
-CSS extensions
-Get current tests to be passing
+done -- CSS extensions
+done -- Get current tests to be passing
 Write tests for booking (intereseted)
 Tests for booking/interested
 Update rails
