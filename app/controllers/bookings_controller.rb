@@ -3,7 +3,10 @@ class BookingsController < ApplicationController
     @booking = Booking.new(
       :zip => params[:booking][:zip],
       :email => params[:booking][:email])
-    result = {success: false, message: 'Sorry, try again'}
+
+    result = {}
+    result[:success] = false
+    result[:message] = "Sorry, try again"
     if @booking.save # save user info
       # send us an email with that info
       @booking.send_booking_submitted
