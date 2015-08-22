@@ -4,8 +4,8 @@ Tock-1
 ======
 done -- CSS extensions
 done -- Get current tests to be passing
-Write tests for booking (interested)
-Tests for booking/interested
+done -- Write tests for booking (interested)
+done -- Tests for booking/interested
 Update rails
 Code climate quality changes
 Fix homepage fade and fade bugs
@@ -17,3 +17,9 @@ DB view in production
 Tweaks from Basil and Julia about homepage
 Tweaks form me about homepage
 Better validation on email and zip
+
+
+
+Defer
+-----
+Get better at testing
