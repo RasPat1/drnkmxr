@@ -6,7 +6,7 @@ done -- CSS extensions
 done -- Get current tests to be passing
 done -- Write tests for booking (interested)
 done -- Tests for booking/interested
-Update rails
+done -- Update rails
 Code climate quality changes
 Fix homepage fade and fade bugs
 Update down arrow to new icon
