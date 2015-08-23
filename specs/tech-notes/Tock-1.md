@@ -7,7 +7,7 @@ done -- Get current tests to be passing
 done -- Write tests for booking (interested)
 done -- Tests for booking/interested
 done -- Update rails
-Code climate quality changes
+done -- Code climate quality changes
 Fix homepage fade and fade bugs
 Update down arrow to new icon
 Down arrow is clickable now

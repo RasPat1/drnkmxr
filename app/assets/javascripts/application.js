@@ -46,9 +46,8 @@ $(function() {
   });
 
   // Cycle the accent words on an interval
-  var interval = setInterval(function() {
+  setInterval(function() {
     var $oldWord = $($accentWords[accentWordIndex]);
-    var className = "intro__accent-word--hidden";
     accentWordIndex = (accentWordIndex + 1) % $accentWords.length;
     var $newWord = $($accentWords[accentWordIndex]);
     $oldWord.fadeToggle(1000).delay(500).css({display: "none"});
@@ -58,12 +57,8 @@ $(function() {
   var $bookForm = $('#new_booking');
   var $failDiv = $('.cta__form-fail');
 
-  // $bookForm.on('ajax', function(e, data, status, xhr) {
-  //   $failDiv.addClass('hidden');
-  // });
-
-  $bookForm.on('ajax:success',function(e, data, status, xhr){
-    var message = data.message
+  $bookForm.on('ajax:success', function(e, data, status, xhr) {
+    var message = data.message;
     if (data.success) {
       $bookForm.text(message);
       $failDiv.addClass('hidden');
@@ -71,7 +66,7 @@ $(function() {
       $failDiv.removeClass('hidden');
       $failDiv.text(message);
     }
-  }).on('ajax:error',function(e, xhr, status, error){
+  }).on('ajax:error',function(e, xhr, status, error) {
     $failDiv.removeClass('hidden');
     $failDiv.text('Failed.');
   });
