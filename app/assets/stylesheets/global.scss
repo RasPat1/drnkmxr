@@ -22,6 +22,22 @@
   }
 }
 
+@mixin panel-image($img, $color) {
+  background-color: $color;
+  background-image: image-url($img);
+  background-size: cover;
+  //@include at2x("fold-1", jpg, 384px, 384px); // why image no work?
+}
+
+@mixin font-size($size, $width) {
+  $goldenRatio: 1.618;
+  $normalWidth: 300px;
+  $normalizationRatio: 1 - (1.5 - (($width / $normalWidth) * 2));
+  font-size: $size;
+  line-height: $size * $goldenRatio * $normalizationRatio;
+
+}
+
 /******************************************************************************
  Color Pallete
  ******************************************************************************/
@@ -31,6 +47,7 @@ $orange: #FFB18C;
 $red: #A0596E;
 $gray: #AEAEAE;
 $white: #FFFFFF;
+$black: #000000;
 
 /******************************************************************************
  TypeFace

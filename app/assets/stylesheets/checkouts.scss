@@ -1,0 +1,58 @@
+@import "extendables";
+
+/******************************************************************************
+ Checkout Page Styles
+ ******************************************************************************/
+html, body, .container-fluid {
+  width: 100%;
+  height: 100%;
+}
+.checkout {
+  //padding-top: 70px;
+  @extend .panel;
+  width: 100%;
+  height: 100%;
+}
+.checkout__content {
+  @extend .panel-content;
+  @include panel-image("fruitandveg-faded-40.jpg", $gray);
+  padding-top: 70px;
+}
+.checkout__heading {
+  font-size: 30px;
+  font-weight: normal;
+  color: $white;
+  margin-bottom: 60px;
+}
+.checkout__book-btn {
+  @extend .btn-primary;
+  color: $white;
+  margin: 30px auto;
+}
+.drnk {
+  line-height: 0;
+  font-size: 0;
+  width: 30%;
+  display: inline-block;
+  vertical-align: top;
+  background-color: rgba($white, 0.7);
+  padding: 0px;
+  margin: 0px 10px;
+  border-radius: 4px;
+}
+.drnk__heading {
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  margin: 9px 0px 6px;
+  color: $black;
+}
+.drnk__tasting-notes {
+  width: 100%;
+  max-width: 200px;
+  text-align: justify;
+  font-size: 12px;
+  @include font-size(12px, 200px);
+  margin: 0px auto;
+  color: $black;
+}
