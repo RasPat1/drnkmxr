@@ -5,12 +5,12 @@
     <h1 class="checkout__heading">
       Choose 3 cocktails below to create your own custom menu
     </h1>
-      <div class="drnk-options">
+      <div class="drink-options">
       <% @drinks.each do |drink| %>
-        <div class="drnk" data-id="<%= drink.id %>">
-          <h2 class="drnk__heading"><%= drink.name %></h2>
-          <img class="drnk__image" src="http://www.fillmurray.com/g/150/150" alt="<%= drink.name %>" />
-          <div class="drnk__tasting-notes">
+        <div class="drink" data-id="<%= drink.id %>">
+          <h2 class="drink__heading"><%= drink.name %></h2>
+          <img class="drink__image" src="http://www.fillmurray.com/g/150/150" alt="<%= drink.name %>" />
+          <div class="drink__tasting-notes">
             <p class="note-content"><%= drink.description %></p>
           </div>
         </div>

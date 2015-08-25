@@ -71,10 +71,10 @@ $(function() {
  ******************************************************************************/
 
  var selectedCount;
- var $drnks = $('.drnk');
+ var $drinks = $('.drink');
  var $nextBtn = $('.checkout__book-btn');
 
- $drnks.each(function() {
+ $drinks.each(function() {
   var $this = $(this);
   $this.click(function(e) {
     selectedCount = getSelectedCount();
@@ -85,16 +85,16 @@ $(function() {
  });
 
  $nextBtn.click(function() {
-  var drnkIds = []
-  var $selectedDrnks = $('.drnk.selected');
-  $selectedDrnks.each(function() {
-    drnkIds.push($(this).data('id'));
+  var drinkIds = []
+  var $selectedDrinks = $('.drink.selected');
+  $selectedDrinks.each(function() {
+    drinkIds.push($(this).data('id'));
   });
 
   $.ajax({
     url: '/checkout/show',
     method: "GET",
-    data: {choices: drnkIds},
+    data: {choices: drinkIds},
     success: function(data) {
       location.href = 'checkout/show'
     }
@@ -102,7 +102,7 @@ $(function() {
  });
 
  function getSelectedCount() {
-  return $('.drnk.selected').size();
+  return $('.drink.selected').size();
  }
 
 });
