@@ -9,7 +9,7 @@
       <% @drinks.each do |drink| %>
         <div class="drnk" data-id="<%= drink.id %>">
           <h2 class="drnk__heading"><%= drink.name %></h2>
-          <img class="drnk__image" src="http://www.fillmurray.com/g/150/150" alt="" />
+          <img class="drnk__image" src="http://www.fillmurray.com/g/150/150" alt="<%= drink.name %>" />
           <div class="drnk__tasting-notes">
             <p class="note-content"><%= drink.description %></p>
           </div>
