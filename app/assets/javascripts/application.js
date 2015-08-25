@@ -22,9 +22,11 @@ jQuery.fn.scrollTo = function(time) {
   };
 
 $(function() {
+
 /******************************************************************************
  Home Pages
  ******************************************************************************/
+
   var $accentWords = $('.intro__accent-word');
   var accentWordIndex = 0;
   var $firstBookBtn = $('.intro__book-btn');
@@ -63,8 +65,26 @@ $(function() {
     $failDiv.removeClass('hidden');
     $failDiv.text('Failed.');
   });
+
 /******************************************************************************
  Checkout Pages
  ******************************************************************************/
+
+ var selectedCount;
+ var $drnks = $('.drnk');
+
+ $drnks.each(function() {
+  var $this = $(this);
+  $this.click(function(e) {
+    selectedCount = getSelectedCount();
+    if (selectedCount < 3 || $this.hasClass('selected')) {
+      $this.toggleClass('selected');
+    }
+  });
+ });
+
+ function getSelectedCount() {
+  return $('.drnk.selected').size();
+ }
 
 });
