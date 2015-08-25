@@ -5,8 +5,13 @@ class CheckoutsController < ApplicationController
   end
 
   def show
+    drinkIds = params[:choices]
+    @drinks = []
+    drinkIds.each do |drinkId|
+      @drinks.push Drink.find(drinkId)
+    end
 
-    # forward selected drinks
+    # @menu = Menu.new(:drinks => @drinks)
   end
 
 end

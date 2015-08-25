@@ -72,6 +72,7 @@ $(function() {
 
  var selectedCount;
  var $drnks = $('.drnk');
+ var $nextBtn = $('.checkout__book-btn');
 
  $drnks.each(function() {
   var $this = $(this);
@@ -79,6 +80,23 @@ $(function() {
     selectedCount = getSelectedCount();
     if (selectedCount < 3 || $this.hasClass('selected')) {
       $this.toggleClass('selected');
+    }
+  });
+ });
+
+ $nextBtn.click(function() {
+  var drnkIds = []
+  var $selectedDrnks = $('.drnk.selected');
+  $selectedDrnks.each(function() {
+    drnkIds.push($(this).data('id'));
+  });
+
+  $.ajax({
+    url: '/checkout/show',
+    method: "GET",
+    data: {choices: drnkIds},
+    success: function(data) {
+      location.href = 'checkout/show'
     }
   });
  });
