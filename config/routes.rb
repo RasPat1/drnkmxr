@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   delete 'logout'     =>  'sessions#destroy'
   post 'bookings'     =>  'bookings#create'
   get 'checkout'      =>  'checkouts#index'
+  get 'checkout/show' =>  'checkouts#show'
   resources :users
   resources :account_activations, only: [:edit]
   resources :password_resets, only: [:new, :create, :edit, :update]
