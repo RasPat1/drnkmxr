@@ -31,6 +31,11 @@ body {
   @extend .btn-primary;
   color: $white;
   margin: 30px auto;
+  font-size: 18px;
+  width: 100px;
+  height: 36px;
+  line-height: 33px;
+  border-radius: 4px;
 }
 .drnk {
   line-height: 0;
