@@ -22,6 +22,9 @@ jQuery.fn.scrollTo = function(time) {
   };
 
 $(function() {
+/******************************************************************************
+ Home Pages
+ ******************************************************************************/
   var $accentWords = $('.intro__accent-word');
   var accentWordIndex = 0;
   var $firstBookBtn = $('.intro__book-btn');
@@ -60,5 +63,8 @@ $(function() {
     $failDiv.removeClass('hidden');
     $failDiv.text('Failed.');
   });
+/******************************************************************************
+ Checkout Pages
+ ******************************************************************************/
 
 });
