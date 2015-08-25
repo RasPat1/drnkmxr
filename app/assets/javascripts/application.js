@@ -15,16 +15,6 @@
 //= require turbolinks
 //= require_tree .
 
-// get height of second panel
-// switch the colors and add the border once height is on the second panel
-// Is there a way to check if two elements are ontop of each other?
-
-// Js for spinning text
-// Use a css transition transform z?  rotate z?
-
-// Once the nave bar goes past the first panel fade the color to
-// THe next panel color.  For now hard code the changes.  Add transitio to the
-// nav and add classes for which panel it's above
 jQuery.fn.scrollTo = function(time) {
     $('html,body').animate({
       scrollTop: $(this).offset().top
