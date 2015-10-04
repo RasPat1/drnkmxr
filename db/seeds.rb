@@ -6,7 +6,7 @@ User.create!(name: "Ras Seed Patel",
   activated: true,
   activated_at: Time.zone.now)
 
-99.times do |n|
+10.times do |n|
   name = Faker::Name.name
   email = "name-email-#{n+1}@drnkmxr.com"
   password = "jkjk!!234"
