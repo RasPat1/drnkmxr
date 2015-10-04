@@ -1,1 +1,26 @@
-Edite vent template
+<% provide(:nav_mod_class, "nav--transparent nav--bordered") %>
+<% provide(:footer_mod_class, "footer--hidden") %>
+<article class="event-edit">
+  <section class="event-edit__content">
+    <div class="event-edit__lead-in">
+      <h1 class="event-edit__heading">
+        How's this look?
+      </h1>
+      <form action="#">Party of ___ at __ for ___ hours on the ____</form>
+    </div>
+    <div class="drink-options">
+      <% @event.menu.drinks.each do |drink| %>
+        <div class="drink">
+          <h2 class="drink__heading"><%= drink.name %></h2>
+          <img class="drink__image" src="http://www.fillmurray.com/g/200/300" alt="<%= drink.name %> image" />
+          <div class="drink__tasting-notes">
+            <p class="note-content"><%= drink.description %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="edit-event__price">$225</div>
+    <div class="event-edit__book-btn">Book</div>
+    <div class="edit-event__pricing-notice">*That's ___ drinks at only $___ per drink</div>
+  </section>
+</article>
