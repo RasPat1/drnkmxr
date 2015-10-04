@@ -1,4 +1,5 @@
 @import "extendables";
+@import "drink";
 
 /******************************************************************************
  Checkout Page Styles
@@ -35,38 +36,4 @@ body {
   height: 36px;
   line-height: 33px;
   border-radius: 4px;
-}
-.drink {
-  $unselectedColor: rgba($white, 0.7);
-  line-height: 0;
-  font-size: 0;
-  width: 30%;
-  display: inline-block;
-  vertical-align: top;
-  background-color: $unselectedColor;
-  padding: 0px;
-  margin: 0px 10px 20px;
-  border-radius: 4px;
-  &:hover {
-    cursor: pointer;
-  }
-  &.selected {
-    background-color: darken($unselectedColor, 30%);
-  }
-}
-.drink__heading {
-  font-weight: normal;
-  font-size: 18px;
-  line-height: 22px;
-  margin: 9px 0px 6px;
-  color: $black;
-}
-.drink__tasting-notes {
-  width: 100%;
-  max-width: 200px;
-  text-align: justify;
-  font-size: 12px;
-  @include font-size(12px, 200px);
-  margin: 0px auto;
-  color: $black;
 }
