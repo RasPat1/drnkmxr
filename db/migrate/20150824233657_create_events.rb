@@ -4,6 +4,7 @@ class CreateEvents < ActiveRecord::Migration
       t.integer :guests
       t.integer :hours
       t.datetime :event_date
+      t.integer :order_id
 
       t.timestamps null: false
     end
