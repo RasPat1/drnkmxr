@@ -24,7 +24,12 @@ class CheckoutsController < ApplicationController
       @menu = Menu.new
       @menu.drinks = @drinks
       @menu.save
-      redirect_to new_event_path
+      if (@menu)
+        @event = Event.new
+        @event.menu = @menu
+        @event.save
+      end
+      redirect_to edit_event_path(@event)
     end
   end
 
