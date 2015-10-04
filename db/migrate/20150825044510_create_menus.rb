@@ -1,6 +1,7 @@
 class CreateMenus < ActiveRecord::Migration
   def change
     create_table :menus do |t|
+      t.integer :event_id
 
       t.timestamps null: false
     end
