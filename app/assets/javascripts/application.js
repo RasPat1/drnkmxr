@@ -84,21 +84,18 @@ $(function() {
   });
  });
 
- $nextBtn.click(function() {
-  var drinkIds = []
+ $nextBtn.click(function(e) {
+  var drinkIds = [];
+  var $idInput = $('.checkout__drink-ids');
+
   var $selectedDrinks = $('.drink.selected');
   $selectedDrinks.each(function() {
     drinkIds.push($(this).data('id'));
   });
+  $idInput.val(drinkIds);
 
-  $.ajax({
-    url: '/checkout/show',
-    method: "GET",
-    data: {choices: drinkIds},
-    success: function(data) {
-      location.href = 'checkout/show'
-    }
-  });
+  // e.preventDefault();
+  // return false;
  });
 
  function getSelectedCount() {

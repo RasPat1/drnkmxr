@@ -5,9 +5,11 @@
     <h1 class="checkout__heading">
       Choose 3 cocktails below to create your own custom menu
     </h1>
+    <%= form_tag do %>
       <div class="drink-options">
       <% @drinks.each do |drink| %>
         <div class="drink" data-id="<%= drink.id %>">
+
           <h2 class="drink__heading"><%= drink.name %></h2>
           <img class="drink__image" src="http://www.fillmurray.com/g/150/150" alt="<%= drink.name %>" />
           <div class="drink__tasting-notes">
@@ -16,6 +18,8 @@
         </div>
       <% end %>
       </div>
-  <div class="checkout__book-btn">Next</div>
+      <input type="hidden" value="" class="checkout__drink-ids" name="drink-ids">
+      <%= submit_tag "Next", class: 'checkout__book-btn' %>
+    <% end %>
   </section>
 </article>
