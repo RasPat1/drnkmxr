@@ -41,3 +41,15 @@ body {
   line-height: 33px;
   border-radius: 4px;
 }
+.event-details__guest-count {
+  @extend .panel__form-field;
+}
+.event-details__event-time {
+  @extend .panel__form-field;
+}
+.event-details__event-length {
+  @extend .panel__form-field;
+}
+.event-details__event-date {
+  @extend .panel__form-field;
+}
