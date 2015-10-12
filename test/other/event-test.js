@@ -1,0 +1,11 @@
+var $guestCount = $('#event-details__guest-count');
+var $time = $('#event-details__event-time');
+var $length = $('#event-details__event-length');
+var $date = $('#event-details__event-date');
+
+$guestCount.val(100);
+$time.val(7);
+$length.val(3);
+$date.val('Oct 17');
+
+$guestCount.trigger('change');

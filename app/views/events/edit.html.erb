@@ -6,7 +6,7 @@
       <h1 class="event-edit__heading">
         How's this look?
       </h1>
-      <form class="event-edit__details" action="#">Party of <input class="event-details__guest-count" id="event-details__guest-count" placeholder="100"></input> guests starting at <input class="event-details__event-time" id="event-details__guest-count" placeholder="7"></input> P.M. for <input class="event-details__event-length" id="event-details__guest-count" placeholder="3"></input> hours on <input class="event-details__event-date" id="event-details__guest-count" placeholder="Oct 17"></input></form>
+      <form class="event-edit__details" action="#">Party of <input class="event-edit__details-input event-details__guest-count" id="event-details__guest-count" placeholder="100"></input> guests starting at <input class="event-edit__details-input event-details__event-time" id="event-details__event-time" placeholder="7"></input> P.M. for <input class="event-edit__details-input event-details__event-length" id="event-details__event-length" placeholder="3"></input> hours on <input class="event-edit__details-input event-details__event-date" id="event-details__event-date" placeholder="Oct 17"></input></form>
     </div>
     <div class="drink-options">
       <% @event.menu.drinks.each do |drink| %>
@@ -19,7 +19,7 @@
         </div>
       <% end %>
     </div>
-    <div class="event-edit__price">$225</div>
+    <div class="event-edit__price-holder" id="event-edit__price-holder">$<span id="event-edit__price">___</span></div>
     <div class="event-edit__book-btn">Book</div>
     <div class="event-edit__pricing-notice">*That's ___ drinks at only $___ per drink</div>
   </section>

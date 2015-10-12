@@ -67,7 +67,7 @@ $(function() {
   });
 
 /******************************************************************************
- Checkout Pages
+ Checkout -- Menu selection
  ******************************************************************************/
 
  var selectedCount;
@@ -101,5 +101,78 @@ $(function() {
  function getSelectedCount() {
   return $('.drink.selected').size();
  }
+
+/******************************************************************************
+ Checkout -- Event Info
+ ******************************************************************************/
+
+  var $inputs = $('.event-edit__details-input');
+  $inputs.change(function(e) {
+    var $this = $(this);
+    var data = extractEventData($this);
+    updatePricing(data);
+  });
+
+  // Get data out of form fields into javascript object
+  function extractEventData() {
+    var data = {};
+    data['guestCount'] = $('#event-details__guest-count').val();
+    data['time'] = $('#event-details__event-time').val();
+    data['length'] = $('#event-details__event-length').val();
+    data['date'] = $('#event-details__event-date').val();
+
+    return data;
+  }
+
+  // Update the pricing section based on the data
+  function updatePricing(data) {
+    var $priceDisplay = $('#event-edit__price');
+    var totalPrice = 0;
+    var priceMultiplier = 1.1;
+    var emptyPriceText = '___';
+    if (isValidData(data)) {
+      totalPrice = data['guestCount'] * data['length'] * priceMultiplier;
+    }
+
+    if (totalPrice > 0) {
+      var totalPriceText = formatMoney(totalPrice);
+      $priceDisplay.text(totalPriceText);
+    } else {
+      $priceDisplay.text(emptyPriceText);
+    }
+  }
+
+  function isValidData(data) {
+    var fields = ['guestCount', 'time', 'length', 'date'];
+    var isValid = true;
+    for( var i = 0; i < fields.length; i++) {
+      var fieldName = fields[i];
+      if (data[fieldName]) {
+        isValid = isValid && true;
+      } else {
+        isValid = isValid && false;
+      }
+    }
+    return isValid;
+  }
+
+  function formatMoney(money) {
+    var decimalIndex = money.indexOf('.'); // Length of string before decimals
+    var moneyString = money + ''; // Coerce to String
+
+    if (decimalIndex !== -1) {
+      if (money.length == decimalIndex + 2) {
+        moneyString = moneyString.substr(0, decimalIndex + 2) + '0';
+      } else if (money.length > decimalIndex + 3) {
+        moneyString = moneyString.substr(0, decimalIndex + 3);
+      }
+    }
+    if (decimalIndex >= 4) { // 3 digits and a period. TO get 1st comma must have at least 4 characters
+      var commaIndex = decimalIndex % 3
+      moneyString = moneyString.slice(0, commaIndex) + ',' + moneyString.slice(commaIndex);
+    }
+
+    return moneyString;
+  }
 
 });
