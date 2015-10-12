@@ -8,7 +8,7 @@
     <%= form_tag do %>
       <div class="drink-options">
       <% @drinks.each do |drink| %>
-        <div class="drink" data-id="<%= drink.id %>">
+        <div class="drink drink__clickable" data-id="<%= drink.id %>">
 
           <h2 class="drink__heading"><%= drink.name %></h2>
           <img class="drink__image" src="http://www.fillmurray.com/g/150/150" alt="<%= drink.name %>" />

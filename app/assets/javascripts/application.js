@@ -71,7 +71,7 @@ $(function() {
  ******************************************************************************/
 
  var selectedCount;
- var $drinks = $('.drink');
+ var $drinks = $('.drink__clickable');
  var $nextBtn = $('.checkout__book-btn');
 
  $drinks.each(function() {
