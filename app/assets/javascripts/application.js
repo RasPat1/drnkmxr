@@ -157,6 +157,7 @@ $(function() {
   }
 
   function formatMoney(money) {
+    money = money + "";
     var decimalIndex = money.indexOf('.'); // Length of string before decimals
     var moneyString = money + ''; // Coerce to String
 
