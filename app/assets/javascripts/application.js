@@ -111,6 +111,7 @@ $(function() {
     var $this = $(this);
     var data = extractEventData($this);
     updatePricing(data);
+    updatePerDrinkMessage(data);
   });
 
   // Get data out of form fields into javascript object
@@ -120,7 +121,7 @@ $(function() {
     data['time'] = $('#event-details__event-time').val();
     data['length'] = $('#event-details__event-length').val();
     data['date'] = $('#event-details__event-date').val();
-
+    data['drinkPrice'] = 1.1;
     return data;
   }
 
@@ -128,24 +129,28 @@ $(function() {
   function updatePricing(data) {
     var $priceDisplay = $('#event-edit__price');
     var totalPrice = 0;
-    var priceMultiplier = 1.1;
     var emptyPriceText = '___';
+    var newEventPriceString;
+
     if (isValidData(data)) {
-      totalPrice = data['guestCount'] * data['length'] * priceMultiplier;
+      totalPrice = getDrinkPrice(data['guestCount'], data['length'], data['drinkPrice']);
     }
 
     if (totalPrice > 0) {
       var totalPriceText = formatMoney(totalPrice);
-      $priceDisplay.text(totalPriceText);
+      newEventPriceString = totalPriceText;
     } else {
-      $priceDisplay.text(emptyPriceText);
+      newEventPriceString = emptyPriceText;
     }
+
+    $priceDisplay.text(newEventPriceString);
   }
 
   function isValidData(data) {
-    var fields = ['guestCount', 'time', 'length', 'date'];
+    var fields = ['guestCount', 'time', 'length', 'date', 'drinkPrice'];
     var isValid = true;
-    for( var i = 0; i < fields.length; i++) {
+
+    for(var i = 0; i < fields.length; i++) {
       var fieldName = fields[i];
       if (data[fieldName]) {
         isValid = isValid && true;
@@ -153,7 +158,47 @@ $(function() {
         isValid = isValid && false;
       }
     }
+
     return isValid;
+  }
+
+  function updatePerDrinkMessage(data) {
+    var drinkCount = getDrinkCount(data['guestCount'], data['time']);
+    var drinkPrice = data['drinkPrice'];
+
+    updatePerDrinkMessageImpl(drinkCount, drinkPrice);
+  }
+
+  function updatePerDrinkMessageImpl(drinkCount, drinkPrice) {
+    var $drinkCountHolder = $('#pricing-notice__drink-count');
+    var $drinkPriceHolder = $('#pricing-notice__drink-price');
+    var newDrinkCountString;
+    var newDrinkPriceString;
+
+    if (drinkCount > 0) {
+      newDrinkCountString = drinkCount + "";
+    } else {
+      newDrinkCountString = "___";
+    }
+
+    if (drinkPrice > 0) {
+      newDrinkPriceString = drinkPrice + "";
+      newDrinkPriceString = formatMoney(drinkPrice);
+    } else {
+      newDrinkPriceString = "___";
+    }
+
+    $drinkCountHolder.text(newDrinkCountString);
+    $drinkPriceHolder.text(newDrinkPriceString);
+  }
+
+  function getDrinkCount(guestCount, eventDuration) {
+      return guestCount * eventDuration * 4;
+  }
+
+  function getDrinkPrice(guestCount, eventDuration, drinkPrice) {
+    var drinkCount = getDrinkCount(guestCount, eventDuration);
+    return drinkCount * drinkPrice;
   }
 
   function formatMoney(money) {
