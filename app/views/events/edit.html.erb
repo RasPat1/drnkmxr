@@ -1,0 +1,26 @@
+<% provide(:nav_mod_class, "nav--transparent nav--bordered") %>
+<% provide(:footer_mod_class, "footer--hidden") %>
+<article class="event-edit">
+  <section class="event-edit__content">
+    <div class="event-edit__lead-in">
+      <h1 class="event-edit__heading">
+        How's this look?
+      </h1>
+      <form class="event-edit__details" action="#">Party of <input class="event-edit__details-input event-details__guest-count" id="event-details__guest-count" placeholder="100"></input> guests starting at <input class="event-edit__details-input event-details__event-time" id="event-details__event-time" placeholder="7"></input> P.M. for <input class="event-edit__details-input event-details__event-length" id="event-details__event-length" placeholder="3"></input> hours on <input class="event-edit__details-input event-details__event-date" id="event-details__event-date" placeholder="Oct 17"></input></form>
+    </div>
+    <div class="drink-options">
+      <% @event.menu.drinks.each do |drink| %>
+        <div class="drink">
+          <h2 class="drink__heading"><%= drink.name %></h2>
+          <img class="drink__image" src="http://www.fillmurray.com/g/200/300" alt="<%= drink.name %> image" />
+          <div class="drink__tasting-notes">
+            <p class="note-content"><%= drink.description %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="event-edit__price-holder" id="event-edit__price-holder">$<span id="event-edit__price">___</span></div>
+    <div class="event-edit__book-btn">Book</div>
+    <div class="event-edit__pricing-notice">*That's <span id="pricing-notice__drink-count">___</span> drinks at only $<span id="pricing-notice__drink-price">___</span> per drink</div>
+  </section>
+</article>

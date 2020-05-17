@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: 
+  Address: 
+  guests: 1
+  hours: 1
+  event_date: 
+
+two:
+  user: 
+  Address: 
+  guests: 1
+  hours: 1
+  event_date: 

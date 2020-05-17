@@ -15,16 +15,6 @@
 //= require turbolinks
 //= require_tree .
 
-// get height of second panel
-// switch the colors and add the border once height is on the second panel
-// Is there a way to check if two elements are ontop of each other?
-
-// Js for spinning text
-// Use a css transition transform z?  rotate z?
-
-// Once the nave bar goes past the first panel fade the color to
-// THe next panel color.  For now hard code the changes.  Add transitio to the
-// nav and add classes for which panel it's above
 jQuery.fn.scrollTo = function(time) {
     $('html,body').animate({
       scrollTop: $(this).offset().top
@@ -32,6 +22,11 @@ jQuery.fn.scrollTo = function(time) {
   };
 
 $(function() {
+
+/******************************************************************************
+ Home Pages
+ ******************************************************************************/
+
   var $accentWords = $('.intro__accent-word');
   var accentWordIndex = 0;
   var $firstBookBtn = $('.intro__book-btn');
@@ -70,5 +65,160 @@ $(function() {
     $failDiv.removeClass('hidden');
     $failDiv.text('Failed.');
   });
+
+/******************************************************************************
+ Checkout -- Menu selection
+ ******************************************************************************/
+
+ var selectedCount;
+ var $drinks = $('.drink__clickable');
+ var $nextBtn = $('.checkout__book-btn');
+
+ $drinks.each(function() {
+  var $this = $(this);
+  $this.click(function(e) {
+    selectedCount = getSelectedCount();
+    if (selectedCount < 3 || $this.hasClass('selected')) {
+      $this.toggleClass('selected');
+    }
+  });
+ });
+
+ $nextBtn.click(function(e) {
+  var drinkIds = [];
+  var $idInput = $('.checkout__drink-ids');
+
+  var $selectedDrinks = $('.drink.selected');
+  $selectedDrinks.each(function() {
+    drinkIds.push($(this).data('id'));
+  });
+  $idInput.val(drinkIds);
+
+  // e.preventDefault();
+  // return false;
+ });
+
+ function getSelectedCount() {
+  return $('.drink.selected').size();
+ }
+
+/******************************************************************************
+ Checkout -- Event Info
+ ******************************************************************************/
+
+  var $inputs = $('.event-edit__details-input');
+  $inputs.change(function(e) {
+    var $this = $(this);
+    var data = extractEventData($this);
+    updatePricing(data);
+    updatePerDrinkMessage(data);
+  });
+
+  // Get data out of form fields into javascript object
+  function extractEventData() {
+    var data = {};
+    data['guestCount'] = $('#event-details__guest-count').val();
+    data['time'] = $('#event-details__event-time').val();
+    data['length'] = $('#event-details__event-length').val();
+    data['date'] = $('#event-details__event-date').val();
+    data['drinkPrice'] = 1.1;
+    return data;
+  }
+
+  // Update the pricing section based on the data
+  function updatePricing(data) {
+    var $priceDisplay = $('#event-edit__price');
+    var totalPrice = 0;
+    var emptyPriceText = '___';
+    var newEventPriceString;
+
+    if (isValidData(data)) {
+      totalPrice = getDrinkPrice(data['guestCount'], data['length'], data['drinkPrice']);
+    }
+
+    if (totalPrice > 0) {
+      var totalPriceText = formatMoney(totalPrice);
+      newEventPriceString = totalPriceText;
+    } else {
+      newEventPriceString = emptyPriceText;
+    }
+
+    $priceDisplay.text(newEventPriceString);
+  }
+
+  function isValidData(data) {
+    var fields = ['guestCount', 'time', 'length', 'date', 'drinkPrice'];
+    var isValid = true;
+
+    for(var i = 0; i < fields.length; i++) {
+      var fieldName = fields[i];
+      if (data[fieldName]) {
+        isValid = isValid && true;
+      } else {
+        isValid = isValid && false;
+      }
+    }
+
+    return isValid;
+  }
+
+  function updatePerDrinkMessage(data) {
+    var drinkCount = getDrinkCount(data['guestCount'], data['time']);
+    var drinkPrice = data['drinkPrice'];
+
+    updatePerDrinkMessageImpl(drinkCount, drinkPrice);
+  }
+
+  function updatePerDrinkMessageImpl(drinkCount, drinkPrice) {
+    var $drinkCountHolder = $('#pricing-notice__drink-count');
+    var $drinkPriceHolder = $('#pricing-notice__drink-price');
+    var newDrinkCountString;
+    var newDrinkPriceString;
+
+    if (drinkCount > 0) {
+      newDrinkCountString = drinkCount + "";
+    } else {
+      newDrinkCountString = "___";
+    }
+
+    if (drinkPrice > 0) {
+      newDrinkPriceString = drinkPrice + "";
+      newDrinkPriceString = formatMoney(drinkPrice);
+    } else {
+      newDrinkPriceString = "___";
+    }
+
+    $drinkCountHolder.text(newDrinkCountString);
+    $drinkPriceHolder.text(newDrinkPriceString);
+  }
+
+  function getDrinkCount(guestCount, eventDuration) {
+      return guestCount * eventDuration * 4;
+  }
+
+  function getDrinkPrice(guestCount, eventDuration, drinkPrice) {
+    var drinkCount = getDrinkCount(guestCount, eventDuration);
+    return drinkCount * drinkPrice;
+  }
+
+  function formatMoney(money) {
+    money = money + "";
+    var decimalIndex = money.indexOf('.'); // Length of string before decimals
+    var moneyString = money + ''; // Coerce to String
+
+    if (decimalIndex !== -1) {
+      if (money.length == decimalIndex + 2) {
+        moneyString = moneyString.substr(0, decimalIndex + 2) + '0';
+      } else if (money.length > decimalIndex + 3) {
+        moneyString = moneyString.substr(0, decimalIndex + 3);
+      }
+    }
+    if (decimalIndex >= 4) { // 3 digits and a period. TO get 1st comma must have at least 4 characters
+      var commaIndex = decimalIndex % 3
+      moneyString = moneyString.slice(0, commaIndex) + ',' + moneyString.slice(commaIndex);
+    }
+
+    return moneyString;
+  }
 
 });

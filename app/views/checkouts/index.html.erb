@@ -3,34 +3,23 @@
 <article class="checkout">
   <section class="checkout__content">
     <h1 class="checkout__heading">
-      Choose 3 cocktails below to create your own custom menu.
+      Choose 3 cocktails below to create your own custom menu
     </h1>
-      <div class="drnk-options">
-        <div class="drnk">
-          <h2 class="drnk__heading">Option 1</h2>
-          <img class="drnk__image" src="http://www.fillmurray.com/g/200/300" alt="" />
-          <div class="drnk__tasting-notes">
-            <p class="note-content">These are random tasting notes, the
-drink has flavors of this thing and that thing and is made with ingredient 1 and ingredient 2.</p>
+    <%= form_tag do %>
+      <div class="drink-options">
+      <% @drinks.each do |drink| %>
+        <div class="drink drink__clickable" data-id="<%= drink.id %>">
+
+          <h2 class="drink__heading"><%= drink.name %></h2>
+          <img class="drink__image" src="http://www.fillmurray.com/g/150/150" alt="<%= drink.name %>" />
+          <div class="drink__tasting-notes">
+            <p class="note-content"><%= drink.description %></p>
           </div>
         </div>
-        <div class="drnk">
-          <h2 class="drnk__heading">Option 2</h2>
-          <img class="drnk__image" src="http://www.fillmurray.com/g/200/300" alt="" />
-          <div class="drnk__tasting-notes">
-            <p class="note-content">These are random tasting notes, the
-drink has flavors of this thing and that thing and is made with ingredient 1 and ingredient 2.</p>
-          </div>
-        </div>
-        <div class="drnk">
-          <h2 class="drnk__heading">Option 3</h2>
-          <img class="drnk__image" src="http://www.fillmurray.com/g/200/300" alt="" />
-          <div class="drnk__tasting-notes">
-            <p class="note-content">These are random tasting notes, the
-drink has flavors of this thing and that thing and is made with ingredient 1 and ingredient 2.</p>
-          </div>
-        </div>
+      <% end %>
       </div>
-  <div class="checkout__book-btn">Book</div>
+      <input type="hidden" value="" class="checkout__drink-ids" name="drink-ids">
+      <%= submit_tag "Next", class: 'checkout__book-btn' %>
+    <% end %>
   </section>
 </article>

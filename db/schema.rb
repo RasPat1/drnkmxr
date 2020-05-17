@@ -11,11 +11,63 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150714124028) do
+ActiveRecord::Schema.define(version: 20151004023256) do
+
+  create_table "addresses", force: :cascade do |t|
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip"
+    t.string   "address1"
+    t.string   "address2"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "bookings", force: :cascade do |t|
     t.string   "email"
     t.string   "zip"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "drinks", force: :cascade do |t|
+    t.string   "name"
+    t.string   "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "drinks_menus", id: false, force: :cascade do |t|
+    t.integer "drink_id"
+    t.integer "menu_id"
+  end
+
+  add_index "drinks_menus", ["drink_id"], name: "index_drinks_menus_on_drink_id"
+  add_index "drinks_menus", ["menu_id"], name: "index_drinks_menus_on_menu_id"
+
+  create_table "events", force: :cascade do |t|
+    t.integer  "guests"
+    t.integer  "hours"
+    t.datetime "event_date"
+    t.integer  "order_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "ingredients", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "menus", force: :cascade do |t|
+    t.integer  "event_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
